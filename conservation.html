@@ -5,13 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocean Conservation</title>
     <link rel="stylesheet" href="css/conservation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="Virtualdive.html">Virtual Dive</a></li>
+            <li><a href="facts.html">OceanFacts</a></li>
+            <li><a href="encyclopedia.html">Enclopedia of Marine Life</a></li>
+            <li><a href="conservation.html">Conservation Corner </a></li>
+            <li><a href="myth.html">Ocean Myths </a></li >
+    
+    
+        </ul>
+        <ul>
+            <li><a href="">Ocean Odessy</a></li>
+            <li class="hideOnMobile"><a href="Virtualdive.html">Virtual Dive</a></li>
+            <li class="hideOnMobile"><a href="facts.html">OceanFacts</a></li>
+            <li class="hideOnMobile"><a href="encyclopedia.html">Enclopedia of Marine Life</a></li>
+            <li class="hideOnMobile"><a href="conservation.html">Conservation Corner </a></li>
+            <li class="hideOnMobile"><a href="myth.html">Ocean Myths </a></li>
+            <li  class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+           
+        </ul>
+     </nav>
     <header class="parallax-section" data-speed="0.5">
         <div class="overlay"></div>
         <div class="content">
-            <h1>Ocean Conservation</h1>
+            <h1 class="animated-text">Ocean Conservation</h1>
             <p>Preserving our oceans for future generations</p>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <div class="scroll-arrow"></div>
+            </div>
         </div>
     </header>
 
@@ -19,6 +46,11 @@
         <div class="container">
             <h2>Our Mission</h2>
             <p>We are dedicated to protecting and preserving the world's oceans, marine life, and coastal ecosystems through education, advocacy, and conservation efforts.</p>
+            <div class="ocean-wave">
+                <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                    <path class="wave-path" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+                </svg>
+            </div>
         </div>
     </section>
 
@@ -36,16 +68,31 @@
             <p>Our oceans face numerous threats including plastic pollution, overfishing, climate change, and habitat destruction. These challenges require immediate action and sustainable solutions.</p>
             <div class="stats-container">
                 <div class="stat-box animated-box">
-                    <h3>8 Million</h3>
-                    <p>Tons of plastic enter our oceans every year</p>
+                    <div class="stat-content">
+                        <h3>8 Million</h3>
+                        <p>Tons of plastic enter our oceans every year</p>
+                    </div>
+                    <div class="stat-icon">
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </div>
                 </div>
                 <div class="stat-box animated-box">
-                    <h3>50%</h3>
-                    <p>Of the world's coral reefs have been lost</p>
+                    <div class="stat-content">
+                        <h3>50%</h3>
+                        <p>Of the world's coral reefs have been lost</p>
+                    </div>
+                    <div class="stat-icon">
+                        <ion-icon name="warning-outline"></ion-icon>
+                    </div>
                 </div>
                 <div class="stat-box animated-box">
-                    <h3>90%</h3>
-                    <p>Of big fish populations depleted since 1950</p>
+                    <div class="stat-content">
+                        <h3>90%</h3>
+                        <p>Of big fish populations depleted since 1950</p>
+                    </div>
+                    <div class="stat-icon">
+                        <ion-icon name="fish-outline"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,57 +111,100 @@
             <h2>How You Can Help</h2>
             <div class="action-grid">
                 <div class="action-item animated-box">
+                    <div class="action-icon">
+                        <ion-icon name="water-outline"></ion-icon>
+                    </div>
                     <h3>Reduce Plastic Use</h3>
                     <p>Minimize single-use plastics and properly dispose of waste to prevent ocean pollution.</p>
+                    <div class="action-hover-effect"></div>
                 </div>
                 <div class="action-item animated-box">
+                    <div class="action-icon">
+                        <ion-icon name="restaurant-outline"></ion-icon>
+                    </div>
                     <h3>Support Sustainable Seafood</h3>
                     <p>Choose seafood from sustainable sources to help combat overfishing.</p>
+                    <div class="action-hover-effect"></div>
                 </div>
                 <div class="action-item animated-box">
+                    <div class="action-icon">
+                        <ion-icon name="leaf-outline"></ion-icon>
+                    </div>
                     <h3>Participate in Beach cleanups</h3>
                     <p>Help remove trash from coastal areas.</p>
+                    <div class="action-hover-effect"></div>
                 </div>
                 <div class="action-item animated-box">
+                    <div class="action-icon">
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </div>
                     <h3>Donate</h3>
                     <p>Support organizations working to protect marine ecosystems and wildlife.</p>
+                    <div class="action-hover-effect"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- footer strat  -->
+    <!-- <section class="interactive-section justify-content-between">
+        <div class="container text-center align-items-center">
+            <h2>Interactive Ocean Map</h2>
+            <p>Explore conservation efforts around the world</p>
+            <div class="ocean-map">
+                <div class="map-point" style="top: 35%; left: 25%;" data-location="Great Barrier Reef">
+                    <div class="point-pulse"></div>
+                    <div class="point-info">
+                        <h4>Great Barrier Reef</h4>
+                        <p>Coral restoration and protection initiatives</p>
+                    </div>
+                </div>
+                <div class="map-point" style="top: 45%; left: 65%;" data-location="Pacific Ocean">
+                    <div class="point-pulse"></div>
+                    <div class="point-info">
+                        <h4>Pacific Ocean</h4>
+                        <p>Plastic cleanup operations</p>
+                    </div>
+                </div>
+                <div class="map-point" style="top: 25%; left: 45%;" data-location="Atlantic Ocean">
+                    <div class="point-pulse"></div>
+                    <div class="point-info">
+                        <h4>Atlantic Ocean</h4>
+                        <p>Marine protected areas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <br><br><br>
+<br>
+<br>
 
-    <div class="body">
-        <footer >
-          <div class="waves" >
-              <div class="wave" id="wave1" style="background: url(Images/wave.png);"></div>
-              <div class="wave" id="wave2" style="background: url(Images/wave.png);"></div>
-              <div class="wave" id="wave3" style="background: url(Images/wave.png);"></div>
-              <div class="wave" id= "wave4" style="background: url(Images/wave.png);"></div>
-          </div>
-          <ul class="social_icon">
-              <li><a href="https://www.instagram.com/the_quill_pixies?igsh=NjNyMW93ZXdtbzF5"><ion-icon name="logo-instagram"></ion-icon>
-              </a></li>
-              <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon>
-              </a></li>
-              <li><a href="https://github.com/AsmitaSingh6174"><ion-icon name="logo-github"></ion-icon>
-              </a></li>
-              <li><a href="https://x.com/Quill_pixies_03?t=iXdXoS4vC5ifJ7YShJzzBA&s=09"><ion-icon name="logo-twitter"></ion-icon></a></li>
-          </ul>
-          <ul class="menu">
-              <li><a href="about.html">About</a></li>
-              <li><a href="facts.html">OceanFacts</a></li>
-              <li><a href="Virtualdive.html">Virtual Dive</a></li>
-              <li><a href="encyclopedia.html">Encylopedia</a></li>
-          </ul>
-          <p>Thanks for visiting Our OceanOdessey~ 404 Not Found</p>
-      </footer>
-    </div>
-        <!-- footter end -->
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-       
+    <!-- footer start  -->
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social_icon">
+            <li><a href="https://www.instagram.com/the_quill_pixies?igsh=NjNyMW93ZXdtbzF5"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://github.com/AsmitaSingh6174"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="https://x.com/Quill_pixies_03?t=iXdXoS4vC5ifJ7YShJzzBA&s=09"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="about.html">About</a></li>
+            <li><a href="facts.html">OceanFacts</a></li>
+            <li><a href="Virtualdive.html">Virtual Dive</a></li>
+            <li><a href="encyclopedia.html">Encylopedia</a></li>
+        </ul>
+        <p>Thanks for visiting Our OceanOdessey~ 404 Not Found</p>
+    </footer>
+    <!-- footer end -->
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="conservation.js"></script>
 </body>
 </html>

@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("prevBtn")
   const nextBtn = document.getElementById("nextBtn")
 
-  // Sample marine species data (in a real app, this would come from an API)
+  // Sample marine species data 
   const marineSpecies = [
     {
       name: "Pacific Ocean",
@@ -85,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${species.name}</h3>
                 <p class="scientific-name"><em>${species.scientificName}</em></p>
                 <p>${species.description}</p>
-                <button class="btn btn-outline-primary btn-sm">Learn More</button>
             `
       speciesContainer.appendChild(card)
     })
@@ -146,10 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Simulate API fetch for marine life data
-  // In a real application, this would fetch data from an actual API
   function fetchMarineLifeData() {
-    // Simulating API fetch with a Promise
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -174,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Interactive water ripple effect on click
   document.addEventListener("click", (e) => {
-    // Create ripple element
+    
     const ripple = document.createElement("div")
     ripple.className = "water-ripple"
 
@@ -182,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ripple.style.left = `${e.clientX}px`
     ripple.style.top = `${e.clientY}px`
 
-    // Add to body
+    
     document.body.appendChild(ripple)
 
     // Remove after animation completes
@@ -298,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `
   document.head.appendChild(particleStyle)
 
-  // Add interactive fish that follow cursor
+  // fish that follow cursor
   const fish = document.createElement("div")
   fish.className = "interactive-fish"
   fish.innerHTML = `<svg viewBox="0 0 100 50" width="50" height="25">
