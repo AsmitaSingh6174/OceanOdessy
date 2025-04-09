@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="css/factsmain.css" rel="stylesheet" type="text/css">
+    <title>Ocean Facts</title>
+    <style>
+        /* Fix for horizontal overflow */
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            background: linear-gradient(30deg,#070024,#188fff);
+        }
+        
+        /* Ensure all containers respect boundaries */
+        .container, .container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        /* Responsive images */
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* Responsive text */
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            h5 {
+                font-size: 1.1rem;
+            }
+            .card-body {
+                padding: 0.75rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            li {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Ensure rows don't cause overflow */
+        .row {
+            margin-right: 0;
+            margin-left: 0;
+            width: 100%;
+        }
+        
+        /* Fix for any potential column overflow */
+        [class*="col-"] {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        
+        /* Responsive height for fact images */
+        @media (max-width: 768px) {
+            .row img[style*="height: 500px"] {
+                height: 300px !important;
+            }
+        }
+        
+        /* Lost Cities section responsive styles */
+        .img img, .col-lg-4 img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .p {
+            color: white;
+            padding: 10px;
+            text-align: justify;
+        }
+        
+        /* Footer responsive adjustments */
+        @media (max-width: 768px) {
+            footer .d-flex {
+                margin-top: 10px;
+            }
+        }
+        
+        /* Improved card responsiveness */
+        .card {
+            height: auto !important;
+        }
+        
+        /* Text color for better readability */
+        h1, h2, h4, h5, .p {
+            color: white;
+        }
+        
+        /* Improved spacing for mobile */
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            hr {
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+  <hr>
+  <!-- Logo & Heading -->
+  <div class="container-fluid p-0 mt-4">
+  
+        <h1 class="text-center mt-4">Ocean Facts: Exploring The Deep Blue</h1>
+    
+    </div>
+  <hr>
+    
+  <div class="container px-2 my-3">
+    <!-- Fact 1 -->
+    <div class="row mx-0 g-3 mb-3">
+      <div class="col-12 col-md-5">
+        <img src="Images/fact2.jpg" alt="Ocean" class="w-100 rounded shadow-sm" style="height: 500px;">
+      </div>
+      <div class="col-12 col-md-7">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Ocean Depths and Exploration</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> The average depth of the ocean is about 12,100 feet (3,688 meters).</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> The deepest known point is the Challenger Deep in the Mariana Trench, reaching a depth of about 10,984 meters (36,037 feet)—deeper than Mount Everest is tall.</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> At sea level, pressure is 1 atmosphere (atm), but for every 10 meters (33 feet) you descend, pressure increases by another atm.</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> At Challenger Deep, the pressure is over 1,000 times the atmospheric pressure at sea level—about 16,000 psi.</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> Sunlight only penetrates the upper 200 meters (656 feet) of the ocean—called the photic zone.</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> Below that lies the aphotic zone, a vast, pitch-black region where most creatures rely on bioluminescence or other senses.</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> Over 80% of the ocean remains unmapped, unobserved, and unexplored. We've explored more of the Moon and Mars than we have of our own seafloor.</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> Only a handful of manned vessels have reached the deepest parts of the ocean.</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> Explorer James Cameron descended solo to the Challenger Deep in 2012 in the submersible Deepsea Challenger.</li>
+              <li class="mb-2"><i class="fas fa-water text-primary me-2"></i> Deep-sea trenches have unique geological formations, including subduction zones and cold seeps.</li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr>
+
+    <!-- Fact 2 -->
+    <div class="row mx-0 g-3 mb-3">
+      <div class="col-12 col-md-7 order-md-1 order-2">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Marine Biodiversity</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i> The ocean contains about 94% of Earth's living species.</li>
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i> Oceans cover over 70% of Earth's surface and host an estimated 2.2 million marine species, though only about 240,000 have been formally identified.</li>
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i> Life in the ocean began over 3.5 billion years ago, making it the oldest and most diverse ecosystem on the planet.</li>
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i> Coral reefs occupy less than 1% of the ocean floor but support about 25% of all marine life.</li>
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i> These vibrant ecosystems host thousands of species of fish, invertebrates, algae, and corals—each playing a specific role in the reef's balance.
+              </li>
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i> The base of the marine food web starts with plankton, including phytoplankton (tiny plant-like organisms) and zooplankton (tiny drifting animals).
+              </li>
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i>Phytoplankton produce up to 50% of Earth's oxygen, making them more crucial to our air supply than all the world's forests combined.
+
+              </li>
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i>Many deep-sea species—like comb jellies, anglerfish, and vampire squid—produce bioluminescence, glowing in the dark like living neon signs.
+              </li>
+              <li class="mb-2"><i class="fas fa-fish text-primary me-2"></i>This natural light is used to attract prey, confuse predators, or communicate in the blackness of the deep.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-5 order-md-2 order-1">
+        <img src="Images/fact2.5.jpg" alt="Marine Biodiversity" class="w-100 rounded shadow-sm" style="height: 500px;">
+      </div>
+    </div>
+    
+    <hr>
+    
+    <!-- Fact 3 -->
+    <div class="row mx-0 g-3 mb-3">
+      <div class="col-12 col-md-5">
+        <img src="Images/fact3.jpg" alt="Ocean Currents" class="w-100 rounded shadow-sm" style="height: 500px;">
+      </div>
+      <div class="col-12 col-md-7">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Ocean Currents and Climate</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i>Ocean currents are like vast, invisible rivers flowing through the sea, moving heat, nutrients, and salt across the globe.
+              </li>
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i>Some are surface-level and driven by winds; others are deep, cold flows driven by temperature and salinity differences.
+              </li>
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i> Warm currents like the Gulf Stream carry tropical heat toward colder regions, making places like Western Europe much warmer than other areas at the same latitude.
+              </li>
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i>Cold currents like the California Current cool coastal regions and bring nutrient-rich waters that fuel marine life.
+
+              </li>
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i> Trade winds and westerlies push surface water across vast distances, forming major currents like the Kuroshio, Agulhas, and Canary currents.
+              </li>
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i> These wind-driven currents form enormous circular systems called gyres, which rotate clockwise in the northern hemisphere and counterclockwise in the southern.
+              </li>
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i>During El Niño, warm Pacific waters shift eastward, disrupting weather worldwide—causing floods in South America and droughts in Australia.
+              </li>
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i>La Niña is the opposite, strengthening trade winds and pushing warm water west, leading to cooler global temperatures and different storm patterns.
+              </li>
+              <li class="mb-2"><i class="fas fa-wind text-primary me-2"></i>Oceans absorb about 90% of the excess heat from global warming.
+
+                Currents then distribute this heat, influencing weather patterns, hurricane formation, and even monsoon cycles.
+                 </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <hr>
+    
+    
+    <div class="row mx-0 g-3 mb-3">
+      <h1 class="h1 text-center">Lost Cities</h1>
+     <div class="img col-lg-4 col-md-4 col-sm-12 mb-3">
+      <img src="Images/yunaguninew.jpg" alt="Yunaguni">
+      <h2 class="text-center mt-3">Yunaguni</h2>
+      <p class="p">Yonaguni is part of the Ryukyu Islands, which are administered by Japan. The island is situated approximately 100 kilometers off the coast of Taiwan.
+        Yonaguni is famous for its underwater rock formations, which include stepped structures and rectangular blocks. The origins of these formations are still 
+        debated, with some arguing that they are natural, while others believe they may be artificial. The underwater structures were discovered by Japanese diver 
+        Kihachiro Aratake in 1985. Researchers continue to study the formations, using techniques such as sonar and submersible vehicles.
+      </p>
+     </div>
+     <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+      <img src="Images/atlantis.jpg" alt="Atlantis">
+      <h2 class="text-center mt-3">Atlantis</h2>
+      <p class="p">According to Plato, Atlantis was a powerful and advanced island nation located beyond the "Pillars of Hercules" (the modern-day Strait of Gibraltar).
+        The Atlanteans were said to be descended from the god Poseidon and lived in a highly advanced civilization with advanced technology and architecture.
+        According to the myth, Atlantis sank into the sea as a result of a catastrophic event, possibly a natural disaster or war. Some researchers believe that
+         Atlantis may have been inspired by real events or places, such as the Minoan civilization on the island of Crete. Many people have searched for Atlantis,
+          believing it to be a lost city or a hidden treasure.
+
+</p>
+     </div>
+     <div class="col-lg-4 col-md-4 col-sm-12">
+      <img src="Images/dwarka.jpg " alt="">
+      <h2 class="text-center mt-3">Dwarka</h2>
+      <p class="p">Dwarka is said to be the kingdom of Lord Krishna, a major deity in Hinduism. According to myth, Dwarka was a golden city, filled with wealth and prosperity.
+        The city is said to have been submerged in the sea, either as a result of a curse or a natural disaster. In recent years, archaeologists have discovered underwater
+         ruins off the coast of modern-day Dwarka, Gujarat, India. In recent years, archaeologists have discovered underwater ruins off the coast of modern-day Dwarka, Gujarat, India.
+         The ruins are believed to date back to the 15th century BCE, making them one of the oldest known cities in the region.
+      </p>
+     </div>
+
+    </div>
+  </div>
+
+  <div class="container-fluid bg-light py-3 mt-3 px-0">
+    <div class="container px-2">
+      <div class="row mx-0 g-3">
+        <div class="col-12 col-md-6">
+          <h4>Did You Know?</h4>
+          <p>The ocean produces over 50% of the world's oxygen and stores 50 times more carbon dioxide than our atmosphere.</p>
+          <p>There are underwater lakes and rivers formed by salt water with different densities.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="Images/underwater-lake.jpg" alt="Underwater Lake" class="w-100 rounded shadow">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer strat  -->
+
+  <div class="body">
+    <footer >
+      <div class="waves" >
+          <div class="wave" id="wave1" style="background: url(Images/wave.png);"></div>
+          <div class="wave" id="wave2" style="background: url(Images/wave.png);"></div>
+          <div class="wave" id="wave3" style="background: url(Images/wave.png);"></div>
+          <div class="wave" id= "wave4" style="background: url(Images/wave.png);"></div>
+      </div>
+      <ul class="social_icon">
+          <li><a href="https://www.instagram.com/the_quill_pixies?igsh=NjNyMW93ZXdtbzF5"><ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+          <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+          <li><a href="https://github.com/AsmitaSingh6174"><ion-icon name="logo-github"></ion-icon>
+          </a></li>
+          <li><a href="https://x.com/Quill_pixies_03?t=iXdXoS4vC5ifJ7YShJzzBA&s=09"><ion-icon name="logo-twitter"></ion-icon></a></li>
+      </ul>
+      <ul class="menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="facts.html">OceanFacts</a></li>
+          <li><a href="Virtualdive.html">Virtual Dive</a></li>
+          <li><a href="encyclopedia.html">Encylopedia</a></li>
+      </ul>
+      <p>Thanks for visiting Our OceanOdessey~ 404 Not Found</p>
+  </footer>
+</div>
+    <!-- footter end -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="js.js"></script>
+</body>
+</html>

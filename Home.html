@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <!-- animation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Icon link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+    <title>OceanOdessy</title>
+    <style>
+        .a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+  <video autoplay loop muted plays-inline src="Images/bg.mp4" class="back-vedio">
+  </video>
+ <nav>
+    <ul class="sidebar">
+        <li onclick="hideSidebar()"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+        <li><a href="Virtualdive.html">Virtual Dive</a></li>
+        <li><a href="facts.html">OceanFacts</a></li>
+        <li><a href="encyclopedia.html">Enclopedia of Marine Life</a></li>
+        <li><a href="conservation.html">Conservation Corner </a></li>
+        <li><a href="myth.html">Ocean Myths </a></li >
+
+
+    </ul>
+    <ul>
+        <li><a href="">Ocean Odessy</a></li>
+        <li class="hideOnMobile"><a href="Virtualdive.html">Virtual Dive</a></li>
+        <li class="hideOnMobile"><a href="facts.html">OceanFacts</a></li>
+        <li class="hideOnMobile"><a href="encyclopedia.html">Enclopedia of Marine Life</a></li>
+        <li class="hideOnMobile"><a href="conservation.html">Conservation Corner </a></li>
+        <li class="hideOnMobile"><a href="myth.html">Ocean Myths </a></li>
+        <li  class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+       
+    </ul>
+ </nav>
+ <!-- Main Page -->
+  <div class="card-body mt-5 mb-0">
+     <div class="card">
+        <video src="Images/explore.mp4" autoplay loop muted></video>
+    </div>
+  </div>
+
+  <div class="ocean-mask-container mt-0 mb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="ocean-description glass-effect p-4 shadow-lg" data-aos="fade-up">
+            <h2 class="text-center mb-4">The Magnificent Ocean</h2>
+            <p class="lead">
+              Covering more than 70% of our planet's surface, oceans are Earth's largest ecosystem and home to millions of species. These vast bodies of water regulate our climate, produce over half of the world's oxygen, and provide food and livelihoods for billions of people worldwide.
+            </p>
+            <p>
+              From the sunlit surface waters to the darkest depths of oceanic trenches, the ocean contains diverse habitats that support an incredible variety of life forms - from microscopic plankton to the massive blue whale. Yet, despite their importance, our oceans face unprecedented threats from pollution, overfishing, and climate change.
+            </p>
+            <p class="mb-0">
+              Join us on an underwater journey to explore the wonders of marine ecosystems and discover how we can help protect these vital waters for future generations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated Button Box -->
+<div class="container text-center my-5 animate__animated animate__fadeIn">
+  <div class="animated-button-box p-4 glass-effect">
+    <h3 class="mb-3 text-dark">Discover the Wonders of the Ocean</h3>
+    <button class="btn btn-lg btn-primary pulse-animation"><a class="a" href="facts.html">Learn About Facts of Marine Life</a></button>
+  </div>
+</div>
+ 
+ <section id="marine-life" class="py-5 position-relative ocean-gradient glass-effect">
+    <div class="wave-animation"></div>
+    <div class="container position-relative" style="z-index: 1;">
+        <div class="text-center mb-5 animate__animated animate__fadeIn">
+            <h2 class="display-4 fw-bold text-dark mb-4" data-aos="fade-down">Fascinating Marine Life</h2>
+            <p class="lead mb-5" data-aos="fade-up">Meet some of the incredible creatures that call our oceans home. From the largest mammals to the smallest organisms, ocean life is diverse and fascinating.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4 col-sm-6 mb-4" data-aos="fade-right">
+                <div class="i-card h-100 shadow-lg">
+                    <div class="overflow-hidden">
+                        <img src="Images/whale.jpeg"
+                         alt="Blue Whale" class="card-img-top img-hover">
+                    </div>
+                    <div class="i-card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="h4">Blue Whale</h3>
+                            <span class="badge bg-danger">Endangered</span>
+                        </div>
+                        <p class="text-muted small">Mammal</p>
+                        <p class="card-text">The largest animal known to have ever existed, blue whales can grow to over 100 feet long and weigh up to 200 tons. They feed almost exclusively on small crustaceans called krill.</p>
+                        <div class="alert alert-info">
+                            <p class="mb-0 fst-italic"><strong>Quick Fact:</strong> A blue whale's heart is the size of a small car!</p>
+                        </div>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent border-0">
+                        <button class="btn btn-primary w-100">Learn More</button>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4" data-aos="fade-up">
+                <div class="i-card h-100 shadow-lg">
+                    <div class="overflow-hidden">
+                        <img src="Images/occtopus.jpeg" alt="Giant Pacific Octopus" class="card-img-top img-hover">
+                    </div>
+                    <div class="i-card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="h4">Giant Pacific Octopus</h3>
+                            <span class="badge bg-success">Thriving</span>
+                        </div>
+                        <p class="text-muted small">Cephalopod</p>
+                        <p class="card-text">Known for their intelligence, these fascinating creatures can solve puzzles, use tools, and even recognize individual humans. They can change color and texture to blend with their surroundings.</p>
+                        <div class="alert alert-info">
+                            <p class="mb-0 fst-italic"><strong>Quick Fact:</strong> Octopuses have three hearts and blue blood!</p>
+                        </div>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent border-0">
+                        <button class="btn btn-primary w-100">Learn More</button>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4" data-aos="fade-left">
+                <div class="i-card h-100 shadow-lg">
+                    <div class="overflow-hidden">
+                        <img src="Images/shark.jpeg" alt="Great White Shark" class="card-img-top img-hover">
+                    </div>
+                    <div class="i-card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="h4">Great White Shark</h3>
+                            <span class="badge bg-danger">Endangered</span>
+                        </div>
+                        <p class="text-muted small">Cartilaginous Fish</p>
+                        <p class="card-text">These apex predators have powerful jaws filled with several rows of serrated teeth. Despite their fearsome reputation, they're actually vulnerable to extinction due to overfishing and habitat loss.</p>
+                        <div class="alert alert-info">
+                            <p class="mb-0 fst-italic"><strong>Quick Fact:</strong> Great whites can detect a single drop of blood in 25 gallons of water!</p>
+                        </div>
+                    </div>
+                    <!-- <div class="card-footer bg-transparent border-0">
+                        <button class="btn btn-primary w-100">Learn More</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+            <button class="btn btn-outline-primary btn-lg"><a class="a" href="encyclopedia.html">Explore More about Marine Life →</a></button>
+        </div>
+    </div>
+</section>
+
+
+    
+    <!-- footer strat  -->
+
+    <div class="body">
+    <footer >
+      <div class="waves" >
+          <div class="wave" id="wave1" style="background: url(Images/wave.png);"></div>
+          <div class="wave" id="wave2" style="background: url(Images/wave.png);"></div>
+          <div class="wave" id="wave3" style="background: url(Images/wave.png);"></div>
+          <div class="wave" id= "wave4" style="background: url(Images/wave.png);"></div>
+      </div>
+      <ul class="social_icon">
+          <li><a href="https://www.instagram.com/the_quill_pixies?igsh=NjNyMW93ZXdtbzF5"><ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+          <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+          <li><a href="https://github.com/AsmitaSingh6174"><ion-icon name="logo-github"></ion-icon>
+          </a></li>
+          <li><a href="https://x.com/Quill_pixies_03?t=iXdXoS4vC5ifJ7YShJzzBA&s=09"><ion-icon name="logo-twitter"></ion-icon></a></li>
+      </ul>
+      <ul class="menu">
+          <li><a href="about.html">About</a></li>
+          <li><a href="facts.html">OceanFacts</a></li>
+          <li><a href="Virtualdive.html">Virtual Dive</a></li>
+          <li><a href="encyclopedia.html">Encylopedia</a></li>
+      </ul>
+      <p>Thanks for visiting Our OceanOdessey~ 404 Not Found</p>
+  </footer>
+</div>
+    <!-- footter end -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <script>
+      function showSidebar(){
+          const sidebar=document.querySelector('.sidebar')
+          sidebar.style.display='flex'
+      }
+      function hideSidebar(){
+           const sidebar=document.querySelector('.sidebar')
+          sidebar.style.display='none'
+      }
+   </script>  
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+       AOS.init({
+           duration: 1000,
+           once: true
+       });
+       fetch('https://api.example.com/marine-life')
+           .then(response => response.json())
+           .then(data => {
+              //  Handle the API response here 
+               console.log(data);
+           })
+           .catch(error => {
+               console.error('Error fetching marine life data:', error);
+           });
+   </script>
+</body>
+</html>

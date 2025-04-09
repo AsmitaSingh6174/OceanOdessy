@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>3D Earth on Scroll</title>
+ 
+ <style>
+  * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body {
+ font-family: 'Arial', sans-serif;
+ overflow-x: hidden;
+ color: #fff;
+ background-color: #000;
+}
+
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 50vh;
+}
+
+.h2 {
+    position: relative;
+    font-size: 6em;
+    color: #02566f;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 40px;
+}
+
+.h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #f8fafb;
+    overflow: hidden;
+    border-right: 2px solid #fafbfc;
+    animation: typing 5s steps(10) infinite;
+    filter: drop-shadow(0 0 20px #f9fbfb);
+}
+
+@keyframes typing {
+    0%, 90%, 100% {
+        width: 0;
+    }
+    30%, 60% {
+        width: 100%;
+    }
+}
+
+.animated-box {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    text-align: center;
+}
+
+.animated-box.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.animated-box button {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #1e90ff, #00bfff);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.animated-box button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.animated-box button:active {
+    transform: translateY(1px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .h2 {
+        font-size: 3em;
+    }
+    
+    .animated-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
+@media (max-width: 1200px) {
+    .h2 {
+        font-size: 5em;
+    }
+    
+    .animated-box {
+        width: 85%;
+    }
+}
+@media (max-width: 992px) {
+    .header-section {
+        padding: 40px 15px;
+        min-height: 40vh;
+    }
+    
+    .h2 {
+        font-size: 4em;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-section {
+        padding: 30px 10px;
+    }
+    .h2 {
+        font-size: 3em;
+        margin-bottom: 30px;
+    }
+    
+    .animated-box {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .animated-box button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 480px) {
+    .header-section {
+        padding: 20px 10px;
+        min-height: 30vh;
+    }
+    
+    .h2 {
+        font-size: 2.2em;
+        margin-bottom: 25px;
+    }
+    
+    .animated-box {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .animated-box button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+.container {
+ position: relative;
+ min-height: 100vh;
+}
+.earth-container {
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+width: 300px;
+ height: 300px;
+ perspective: 1000px;
+}
+.earth {
+ width: 100%;
+ height: 100%;
+ background: 
+url('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg') repeat-x;
+ background-size: auto 100%;
+ border-radius: 50%;
+ box-shadow: 
+ 0 0 50px rgba(64, 158, 255, 0.5),
+ inset 0 0 50px rgba(64, 158, 255, 0.3),
+ inset -20px 0 80px rgba(0, 0, 255, 0.6),
+ inset 20px 0 80px rgba(255, 165, 0, 0.6);
+ animation: rotate 60s linear infinite;
+ transform-style: preserve-3d;
+ position: relative;
+}
+.earth::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+background: 
+url('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png') repeat-x;
+ background-size: auto 100%;
+ border-radius: 50%;
+ opacity: 0.3;
+ animation: rotate 30s linear infinite;
+ box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.3);
+}
+.earth::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: radial-gradient(circle at 30% 40%, transparent 40%, rgba(64, 158, 255, 0.2) 100%);
+ border-radius: 50%;
+}
+@keyframes rotate {
+ 0% {
+ background-position: 0 0;
+ }
+ 100% {
+ background-position: -200% 0;
+ }
+}
+.content {
+ position: absolute;
+top: 100vh;
+ width: 100%;
+ padding: 50px;
+}
+.scroll-section {
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ padding: 20px;
+ text-align: center;
+}
+h2 {
+ margin-bottom: 20px;
+ font-size: 2.5rem;
+ background: linear-gradient(90deg, #1e90ff, #00bfff);
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+}
+h1{
+    color: whitesmoke;
+    font-family: georgia;
+    font-size: 2.8rem;
+    margin-top: 2;
+    text-align: center;
+}
+p {
+ font-size: 1.2rem;
+ max-width: 600px;
+ line-height: 1.6;
+ color: #ccc;
+}
+.p
+{
+    color: lightgreen
+}
+ </style>
+</head>
+<body>
+    <div class="header-section">
+        <h2 class="h2" data-text="OceanFacts">OceanFacts</h2>
+        <div class="animated-box">
+            &nbsp;&nbsp;<button><a href="factsmain.html">More Ocean Facts</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;<button><a href="Home.html">Ocean Odessy</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button><a href="conservation.html">Conservation Corner</a></button>
+            
+
+        </div>
+       <br><br> <h1 class="h1">Scroll Down</h1>
+    </div>
+   
+    <div class="container">
+        <div class="earth-container">
+            <div class="earth"></div>
+        </div>
+        <div class="content">
+           
+            <section class="scroll-section">
+                <h2>General Facts</h2>
+                <p>
+                    1. Earth’s Surface – Oceans cover about 71% of the Earth's surface.<br>
+                    2. Largest Ocean – The Pacific Ocean is the largest, covering more than 30% of the Earth’s surface.<br>             
+                    3. Deepest Point – The Mariana Trench in the Pacific Ocean is the deepest point, reaching about 36,070 feet (10,994 meters) at Challenger Deep.<br>
+                    4. Water Volume – Oceans contain 97% of Earth’s water.<br>
+                    5. Saltiness – Ocean water has an average salinity of 3.5%, meaning every liter of seawater contains about 35 grams of salt.
+                 </p>   
+            
+            </section>
+            <section class="scroll-section">
+                <h2>Marine Life & Ecosystem</h2>
+                <p>6. Biodiversity – More than 80% of the ocean is unexplored, and scientists estimate millions of undiscovered species.<br>
+                   7. Largest Animal – The blue whale is the largest animal on Earth, reaching up to 100 feet (30 meters) in length.<br>
+                   8. Bioluminescence – Many deep-sea creatures produce their own light, a phenomenon called bioluminescence.<br>
+                   9. Coral Reefs – Coral reefs, like the Great Barrier Reef, are among the most diverse ecosystems but are threatened by climate change.
+                    
+                    </p>
+            </section>
+            <section class="scroll-section">
+                <h2>Mysterious and Unique Phenomena</h2>
+                <p>10. Ocean Currents – The Great Ocean Conveyor Belt (thermohaline circulation) regulates global climate by distributing heat.<br>
+                   11. Underwater Volcanoes – About 75% of Earth's volcanoes are underwater.<br>
+                   12. Underwater Lakes & Rivers – Some areas of the ocean have high salinity levels, creating underwater lakes and rivers.<br>
+                   14. Atlantic vs. Pacific – The Atlantic Ocean is saltier than the Pacific due to higher evaporation rates.
+                    </p>
+            </section>
+            <section class="scroll-section">
+                <h2>Human & Historical Connections</h2>
+                <p>15. Oldest Ocean – The Pacific Ocean is the oldest, estimated to be around 750 million years old.<br>
+                    16. Lost Cities – Ancient underwater ruins, like Dwarka (India) and Yonaguni Monument (Japan), suggest submerged civilizations.<br>
+                    17. Titanic's Resting Place – The Titanic wreck lies about 12,500 feet (3,800 meters) deep in the North Atlantic Ocean.<br>
+                    18. Deepest Human Dive – The record for the deepest manned ocean dive is 10,927 meters (35,853 feet), achieved by Victor Vescovo in 2019.<br>
+                    19. Plastic Pollution – Over 8 million tons of plastic enter the ocean each year, threatening marine life.</p>
+            </section>
+            <section class="scroll-section">
+                <h2>Keep Exploring</h2>
+                <p><a href="factsmain.html">Learn More</a></p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const earth = document.querySelector('.earth');
+            const content = document.querySelector('.content');
+            const scrollSections = document.querySelectorAll('.scroll-section');
+            const animatedBox = document.querySelector('.animated-box');
+            
+            // Show the animated box with a slight delay
+            setTimeout(() => {
+                animatedBox.classList.add('show');
+            }, 500);
+            
+            let totalScrollHeight = 0;
+            scrollSections.forEach(section => {
+                totalScrollHeight += section.offsetHeight;
+            });
+            
+            // Adjust content position to account for all scroll sections
+            content.style.height = totalScrollHeight + 'px';
+            
+            // Scroll event listener
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                const rotation = scrollPosition / 10; // Adjust rotation speed
+                
+                // Apply rotation based on scroll position
+                earth.style.animation = 'none';
+                earth.style.transform = `rotateY(${rotation}deg)`;
+                // Restart animation after a small delay to prevent jitter
+                setTimeout(() => {
+                    earth.style.animation = 'rotate 60s linear infinite';
+                }, 10);
+                
+                // Update cloud layer rotation (slightly faster for parallax effect)
+                const cloudsRotation = scrollPosition / 8;
+                earth.querySelector('::before').style.transform = `rotateY(${cloudsRotation}deg)`;
+            });
+            
+            // Reset animation on scroll end for smoother experience
+            let isScrolling;
+            window.addEventListener('scroll', function() {
+                window.clearTimeout(isScrolling);
+                isScrolling = setTimeout(function() {
+                    earth.style.animation = 'rotate 60s linear infinite';
+                }, 100);
+            }, false);
+        });
+    </script>
+</body>
+</html>

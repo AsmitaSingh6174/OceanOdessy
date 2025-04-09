@@ -1,0 +1,310 @@
+body { background: #0a1e2a; color: white; font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
+
+header { background: #051017; padding: 20px; }
+
+nav ul { list-style: none; padding: 0; }
+
+nav ul li { display: inline; margin: 0 15px; }
+
+nav ul li a { color: #00aaff; text-decoration: none; }
+
+section { padding: 40px 20px; }
+
+.species-container { 
+  display: flex; 
+  justify-content: center; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+  margin-top: 20px; }
+
+.species-card { 
+  background: #002b3d; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5); 
+  cursor: pointer; 
+  transition: transform 0.3s, background 0.3s; }
+
+.species-card:hover { 
+  transform: scale(1.1);
+   background: #004766; }
+
+#quizContainer { margin-top: 20px; }
+
+.quiz-option { 
+  background: #005577; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  margin: 10px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  transition: background 0.3s; }
+
+.quiz-option:hover { background: #0077aa; }
+
+#oceanMap { 
+  margin: 0 auto; 
+  width: 80%; 
+  height: 60vh; 
+  border: 2px solid #00aaff; 
+  border-radius: 15px; 
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.4); 
+  background-color: #001822; 
+}
+ 
+a{
+  text-decoration: none;
+  
+}
+.text{
+  color: white;
+}
+.heading{
+  color: cornsilk;
+}
+  /* Container for the cards */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .card-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .card {
+    padding: 2em;
+    width: 100%;
+    height: 90%;
+    background: #a9b1d1;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1em;
+  }
+  
+  .card::after, .card::before {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    /* Removed the commented out line about border-block-color */
+    background-size: 400% 400%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: animategradientBG 3s ease alternate infinite;
+  }
+  
+  .card::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+  }
+  
+  @keyframes animategradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  p {
+    color: rgb(9, 9, 9);
+    margin-top: 0.5em;
+  }
+  h4{
+    color:black
+    ;
+  }
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+    
+    .card {
+      padding: 1.5em;
+    }
+    
+    .card img {
+      height: 220px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    body {
+      padding: 0.5rem;
+    }
+    
+    .card-wrapper {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+
+
+  /* footer  */
+.body{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 100vh;
+
+}
+
+footer
+{
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+footer .social_icon,
+footer .menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+footer .social_icon li,
+footer .menu li
+{
+  list-style: none;
+}
+footer .social_icon li a
+{
+font-size: 2em;
+color: #fff;
+margin: 0 10px;
+display: inline-block;
+transition: 0.5s;
+}
+footer .social_icon li a:hover
+{
+  transform: translateY(-10px);
+}
+footer .menu li a{
+  font-size: 1.2em;
+  color: #fff;
+  margin:0 10px;
+  display: inline-block;
+  /* transition: 0.5s; */
+  text-decoration: none;
+  opacity: 0.75;
+}
+footer .menu li a:hover
+{
+  opacity: 1;
+}
+footer p
+{
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+footer .wave{
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(Images/wave.png);
+  background-size: 1000px 100px;
+
+}
+footer .wave#wave1{
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave 4s linear infinite;
+}
+footer .wave#wave2{
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave_02 4s linear infinite;
+}
+footer .wave#wave3{
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px ;
+  animation: animateWave 3s linear infinite;
+}
+footer .wave#wave4{
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave 3s linear infinite;
+}
+@keyframes animateWave
+{
+  0%{
+      background-position-x: 1000px ;
+  }
+  100%{
+      background-position-x: 0px;
+  }
+}
+@keyframes animateWave_02
+{
+  0%{
+      background-position-x: 0px ;
+  }
+  100%{
+      background-position-x: 1000px;
+  }
+}

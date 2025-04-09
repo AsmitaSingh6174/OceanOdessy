@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Dive - Explore the Ocean</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/virtual_dive.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline class="back-video">
+            <source src="Images/vdo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href=""><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="Virtualdive.html">Virtual Dive</a></li>
+            <li><a href="facts.html">OceanFacts</a></li>
+            <li><a href="encyclopedia.html">Enclopedia of Marine Life</a></li>
+            <li><a href="conservation.html">Conservation Corner </a></li>
+            <li><a href="myth.html">Ocean Myths </a></li >
+    
+    
+        </ul>
+        <ul>
+            <li><a href="">Ocean Odessy</a></li>
+            <li class="hideOnMobile"><a href="Virtualdive.html">Virtual Dive</a></li>
+            <li class="hideOnMobile"><a href="facts.html">OceanFacts</a></li>
+            <li class="hideOnMobile"><a href="encyclopedia.html">Enclopedia of Marine Life</a></li>
+            <li class="hideOnMobile"><a href="conservation.html">Conservation Corner </a></li>
+            <li class="hideOnMobile"><a href="myth.html">Ocean Myths </a></li>
+            <li  class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+           
+        </ul>
+     </nav>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container text-center">
+            <h1 class="animate__animated animate__fadeIn">Welcome To Our Virtual Dive</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Explore the wonders of the ocean from your screen</p>
+            <a href="#explore" class="btn btn-explore animate__animated animate__fadeIn animate__delay-2s">Start Exploring</a>
+            
+            <!-- Bubbles -->
+            <div class="bubbles-container">
+                <span class="bubble a"></span>
+                <span class="bubble b"></span>
+                <span class="bubble c"></span>
+                <span class="bubble d"></span>
+                <span class="bubble e"></span>
+                <span class="bubble f"></span>
+                <span class="bubble g"></span>
+                <span class="bubble h"></span>
+                <span class="bubble i"></span>
+                <span class="bubble j"></span>
+                <span class="bubble k"></span>
+                <span class="bubble l"></span>
+                <span class="bubble m"></span>
+                <span class="bubble n"></span>
+                <span class="bubble o"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section id="explore" class="explore-section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Explore the Depths</h2>
+            <p class="animate__animated animate__fadeIn animate__delay-1s text-center">Your Underwater Adventure Begins Here!
+                <br>
+                Here at Ocean Odyssey, our Virtual Dives take you on a magical trip through the deep blue. Whether you're interested in 
+                colorful coral reefs or the pitch-black depths of the ocean trenches, we’ve got a dive for you</p>
+
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card explore-card">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <h3>Coral Reefs</h3>
+                            <p>Discover the vibrant ecosystems of coral reefs and the diverse marine life they support.</p>
+                            <a href="coralreef.html" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card explore-card">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <h3>Deep Sea</h3>
+                            <p>Venture into the mysterious depths of the ocean and meet its unusual inhabitants.</p>
+                            <a href="deepsea.html" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card explore-card">
+                        <div class="card-body">
+                            <div class="icon-container">
+                                <i class="fas fa-ship"></i>
+                            </div>
+                            <h3>Shipwrecks</h3>
+                            <p>Explore underwater archaeological sites and the marine life that has made them home.</p>
+                            <a href="shipwrecks.html" class="btn btn-outline-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Species Showcase -->
+    <section id="species" class="species-section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Marine Species</h2>
+            <div class="species-carousel" data-aos="fade-up">
+                <div class="species-container" id="speciesContainer">
+                    <!-- Species cards will be dynamically added here -->
+                </div>
+                <div class="carousel-controls">
+                    <button id="prevBtn" class="carousel-control"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextBtn" class="carousel-control"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2>About Virtual Dive</h2>
+                    <p>Virtual Dive is an immersive digital experience that brings the wonders of the ocean to your screen. Our mission is to educate and inspire people about marine life and ocean conservation.</p>
+                    <p>Through interactive experiences and detailed information, we aim to create awareness about the importance of preserving our oceans for future generations.</p>
+                    <a href="#" class="btn btn-primary mt-3">Learn More</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-image-container">
+                        <div class="about-image"></div>
+                        <div class="floating-elements">
+                            <div class="float-element e1"></div>
+                            <div class="float-element e2"></div>
+                            <div class="float-element e3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer strat  -->
+
+    <div class="body">
+        <footer >
+          <div class="waves" >
+              <div class="wave" id="wave1" style="background: url(Images/wave.png);"></div>
+              <div class="wave" id="wave2" style="background: url(Images/wave.png);"></div>
+              <div class="wave" id="wave3" style="background: url(Images/wave.png);"></div>
+              <div class="wave" id= "wave4" style="background: url(Images/wave.png);"></div>
+          </div>
+          <ul class="social_icon">
+              <li><a href="https://www.instagram.com/the_quill_pixies?igsh=NjNyMW93ZXdtbzF5"><ion-icon name="logo-instagram"></ion-icon>
+              </a></li>
+              <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon>
+              </a></li>
+              <li><a href="https://github.com/AsmitaSingh6174"><ion-icon name="logo-github"></ion-icon>
+              </a></li>
+              <li><a href="https://x.com/Quill_pixies_03?t=iXdXoS4vC5ifJ7YShJzzBA&s=09"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          </ul>
+          <ul class="menu">
+              <li><a href="about.html">About</a></li>
+              <li><a href="facts.html">OceanFacts</a></li>
+              <li><a href="Virtualdive.html">Virtual Dive</a></li>
+              <li><a href="encyclopedia.html">Encylopedia</a></li>
+          </ul>
+          <p>Thanks for visiting Our OceanOdessey~ 404 Not Found</p>
+      </footer>
+    </div>
+        <!-- footter end -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="virtual.js"></script>
+    <script>
+        function showSidebar(){
+            const sidebar=document.querySelector('.sidebar')
+            sidebar.style.display='flex'
+        }
+        function hideSidebar(){
+             const sidebar=document.querySelector('.sidebar')
+            sidebar.style.display='none'
+        }
+     </script>
+</body>
+</html>
