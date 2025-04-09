@@ -279,6 +279,27 @@ p {
 {
     color: lightgreen
 }
+.btn-explore {
+    background-color: white;
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid #fff;
+  }
+  a{
+    text-decoration: none;
+  }
+  .btn-explore:hover {
+    background-color: transparent;
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(159, 156, 156, 0.598);
+  }
+  
  </style>
 </head>
 <body>
@@ -338,7 +359,7 @@ p {
             </section>
             <section class="scroll-section">
                 <h2>Keep Exploring</h2>
-                <p><a href="factsmain.html">Learn More</a></p>
+                <button class="btn-explore"><a href="factsmain.html" class="btn">Know More</a></button>
             </section>
         </div>
     </div>
