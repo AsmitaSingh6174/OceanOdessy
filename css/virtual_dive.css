@@ -559,9 +559,11 @@ nav li:first-child{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(Images/Zones.jpg);
+    background-image: url(../Images/bg2.jpg);
     background-size: cover;
+    
     background-position: center;
+    background-repeat: no-repeat;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     z-index: 1;
