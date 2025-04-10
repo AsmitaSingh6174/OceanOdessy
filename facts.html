@@ -335,6 +335,26 @@ p {
 {
     color: lightgreen
 }
+.btn-explore {
+    background-color: white;
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid #fff;
+  }
+  a{
+    text-decoration: none;
+  }
+  .btn-explore:hover {
+    background-color: transparent;
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(159, 156, 156, 0.598);
+  }
  </style>
 </head>
 <body>
@@ -342,7 +362,7 @@ p {
         <h2 class="h2" data-text="Facts&Trivia">Facts&Trivia</h2>
         <div class="animated-box">
             <button><a href="factsmain.html">More Ocean Facts</a></button>
-            <button><a href="index.html">Ocean Odessy</a></button>
+            <button><a href="Home.html">Ocean Odessey</a></button>
             <button><a href="conservation.html">Conservation Corner</a></button>
             
 
@@ -394,7 +414,7 @@ p {
             </section>
             <section class="scroll-section">
                 <h2>Keep Exploring</h2>
-                <p><a href="factsmain.html">Learn More</a></p>
+                <p><button class="btn btn-explore"><a href="factsmain.html">Learn More</a></button></p>
             </section>
         </div>
     </div>

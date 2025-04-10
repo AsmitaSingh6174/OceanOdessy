@@ -293,15 +293,12 @@ function initCustomCursor() {
 // nav sidebar
 function showSidebar() {
     const sidebar = document.querySelector('.sidebar');
-    if (!sidebar) return;
-    
     sidebar.style.display = 'flex';
 
     //animation
     sidebar.style.animation = 'slideIn 0.3s forwards';
     document.body.style.overflow = 'hidden';
     
-    // Add blur effect to main content
     const mainContent = document.querySelector('main');
     if (mainContent) {
         mainContent.style.filter = 'blur(3px)';
@@ -311,15 +308,16 @@ function showSidebar() {
 
 function hideSidebar() {
     const sidebar = document.querySelector('.sidebar');
+
     if (!sidebar) return;
 
-    // animation
+    // sidebar_animation
     sidebar.style.animation = 'slideOut 0.3s forwards';
 
     setTimeout(() => {
         sidebar.style.display = 'none';
         document.body.style.overflow = 'auto';
-        // Remove blur effect from main content
+
         const mainContent = document.querySelector('main');
         if (mainContent) {
             mainContent.style.filter = 'blur(0)';

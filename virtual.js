@@ -1,13 +1,11 @@
-// Initialize AOS (Animate on Scroll)
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Declare AOS
   AOS.init({
     duration: 1000,
     once: false,
     mirror: true,
   })
 
-  // Navbar scroll effect
   const navbar = document.querySelector(".navbar")
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
@@ -17,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault()
@@ -33,12 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // Species carousel functionality
   const speciesContainer = document.getElementById("speciesContainer")
   const prevBtn = document.getElementById("prevBtn")
   const nextBtn = document.getElementById("nextBtn")
-
-  // Sample marine species data 
+// ocean data
   const marineSpecies = [
     {
       name: "Pacific Ocean",
@@ -72,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ]
 
-  // Populate species cards
+  // ocean cards
   function populateSpeciesCards() {
     speciesContainer.innerHTML = ""
     marineSpecies.forEach((species) => {
@@ -90,11 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Initialize species carousel
+  // ocean carousel
   if (speciesContainer) {
     populateSpeciesCards()
-
-    // Carousel navigation
     let scrollAmount = 0
     const cardWidth = 330 // card width + margin
 
@@ -121,15 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Bubble animation enhancement
+  // Bubbleieee
   const bubblesContainer = document.querySelector(".bubbles-container")
   if (bubblesContainer) {
-    // Create additional random bubbles
     for (let i = 0; i < 15; i++) {
       const bubble = document.createElement("span")
       bubble.className = "bubble"
 
-      // Random positioning and sizing
       const size = Math.random() * 30 + 10
       const left = Math.random() * 100
       const animationDuration = Math.random() * 15 + 5
@@ -158,36 +149,29 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Use the simulated API data
   fetchMarineLifeData()
     .then((data) => {
       console.log("Marine life data loaded:", data)
-      // In a real app, you would update UI elements with this data
     })
     .catch((error) => {
       console.error("Error fetching marine life data:", error)
     })
 
-  // Interactive water ripple effect on click
   document.addEventListener("click", (e) => {
     
     const ripple = document.createElement("div")
     ripple.className = "water-ripple"
 
-    // Position the ripple at click coordinates
     ripple.style.left = `${e.clientX}px`
     ripple.style.top = `${e.clientY}px`
 
     
     document.body.appendChild(ripple)
-
-    // Remove after animation completes
     setTimeout(() => {
       ripple.remove()
     }, 2000)
   })
 
-  // Add CSS for the water ripple effect
   const rippleStyle = document.createElement("style")
   rippleStyle.textContent = `
         .water-ripple {
@@ -215,35 +199,29 @@ document.addEventListener("DOMContentLoaded", () => {
     `
   document.head.appendChild(rippleStyle)
 
-  // Parallax effect for sections
   window.addEventListener("scroll", () => {
     const scrollPosition = window.pageYOffset
 
-    // Apply parallax effect to elements with .parallax-element class
     document.querySelectorAll(".parallax-element").forEach((element) => {
       const speed = element.getAttribute("data-speed") || 0.5
       element.style.transform = `translateY(${scrollPosition * speed}px)`
     })
   })
 
-  // Add underwater particle effect
   const particleContainer = document.createElement("div")
   particleContainer.className = "particle-container"
   document.body.appendChild(particleContainer)
 
-  // Create particles
   for (let i = 0; i < 50; i++) {
     const particle = document.createElement("div")
     particle.className = "particle"
 
-    // Random properties
     const size = Math.random() * 5 + 2
     const posX = Math.random() * 100
     const posY = Math.random() * 100
     const duration = Math.random() * 60 + 30
     const delay = Math.random() * 10
 
-    // Apply styles
     particle.style.width = `${size}px`
     particle.style.height = `${size}px`
     particle.style.left = `${posX}%`
@@ -254,7 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
     particleContainer.appendChild(particle)
   }
 
-  // Add CSS for particles
   const particleStyle = document.createElement("style")
   particleStyle.textContent = `
         .particle-container {
@@ -314,21 +291,16 @@ document.addEventListener("DOMContentLoaded", () => {
     mouseY = e.clientY
   })
 
-  // Update fish position with smooth animation
   function animateFish() {
-    // Calculate distance between fish and cursor
+    //distance between fish and cursor
     const dx = mouseX - fishX
     const dy = mouseY - fishY
-
-    // Move fish 5% of the distance to cursor (easing)
     fishX += dx * 0.05
     fishY += dy * 0.05
 
-    // Apply position
     fish.style.left = `${fishX}px`
     fish.style.top = `${fishY}px`
 
-    // Rotate fish based on movement direction
     const angle = (Math.atan2(dy, dx) * 180) / Math.PI
     fish.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`
 
@@ -337,7 +309,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animateFish()
 
-  // Add CSS for interactive fish
   const fishStyle = document.createElement("style")
   fishStyle.textContent = `
         .interactive-fish {
