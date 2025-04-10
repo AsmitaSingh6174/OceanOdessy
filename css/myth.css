@@ -1,456 +1,263 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
-    padding-top: 30px;
-}
-
-.header-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 50px 20px;
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  min-height: 50vh;
+  min-height: 100vh;
+  background-image: url(Images/mythical_stories.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  padding-top: 30px;
+}
+
+.header-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 50px 20px;
+position: relative;
+z-index: 10;
+width: 100%;
+min-height: 50vh;
 }
 
 .h2 {
-  position: relative;
-  font-size: 6em;
-  color: #080808;
-  text-align: center;
-  line-height: 1.2;
-  margin-bottom: 40px;
+position: relative;
+font-size: 6em;
+color: #080808;
+text-align: center;
+line-height: 1.2;
+margin-bottom: 40px;
 }
 
 .h2::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: #f6f8f9;
-  overflow: hidden;
-  border-right: 2px solid #fafbfc;
-  animation: typing 5s steps(10) infinite;
-  filter: drop-shadow(0 0 20px #f9fbfb);
+content: attr(data-text);
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+color: #f6f8f9;
+overflow: hidden;
+border-right: 2px solid #fafbfc;
+animation: typing 5s steps(10) infinite;
+filter: drop-shadow(0 0 20px #f9fbfb);
 }
 
 @keyframes typing {
-  0%, 90%, 100% {
-      width: 0;
-  }
-  30%, 60% {
-      width: 100%;
-  }
+0%, 90%, 100% {
+    width: 0;
+}
+30%, 60% {
+    width: 100%;
+}
 }
 
+/* Update these styles in the existing <style> section */
+
 .animated-box {
-  width: 80%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  transform: translateY(50px);
-  opacity: 0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  text-align: center;
+width: 80%;
+max-width: 800px;
+margin: 0 auto;
+padding: 30px;
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+border-radius: 15px;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+transform: translateY(50px);
+opacity: 0;
+transition: transform 0.8s ease, opacity 0.8s ease;
+text-align: center;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 15px;
 }
 
 .animated-box.show {
-  transform: translateY(0);
-  opacity: 1;
+transform: translateY(0);
+opacity: 1;
 }
 
 .animated-box button {
-  padding: 12px 24px;
-  background: linear-gradient(90deg, #1e90ff, #00bfff);
-  border: none;
-  border-radius: 30px;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+padding: 12px 24px;
+background: linear-gradient(90deg, #1e90ff, #00bfff);
+border: none;
+border-radius: 30px;
+color: white;
+font-size: 1.2rem;
+font-weight: bold;
+cursor: pointer;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+min-width: 200px;
+flex: 0 1 auto;
+}
+
+.animated-box button a {
+color: white;
+text-decoration: none;
+display: block;
+width: 100%;
+height: 100%;
 }
 
 .animated-box button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .animated-box button:active {
-  transform: translateY(1px);
+transform: translateY(1px);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .h2 {
-      font-size: 3em;
-  }
-  
-  .animated-box {
-      width: 90%;
-      padding: 20px;
-  }
-}
-@media (max-width: 1200px) {
-  .h2 {
-      font-size: 5em;
-  }
-  
-  .animated-box {
-      width: 85%;
-  }
-}
+/* Update the responsive media queries */
 @media (max-width: 992px) {
-  .header-section {
-      padding: 40px 15px;
-      min-height: 40vh;
-  }
-  
-  .h2 {
-      font-size: 4em;
-  }
+.animated-box {
+    width: 85%;
+    padding: 25px;
+    gap: 12px;
+}
+
+.animated-box button {
+    padding: 11px 22px;
+    font-size: 1.1rem;
+    min-width: 180px;
+}
 }
 
 @media (max-width: 768px) {
-  .header-section {
-      padding: 30px 10px;
-  }
-  .h2 {
-      font-size: 3em;
-      margin-bottom: 30px;
-  }
-  
-  .animated-box {
-      width: 90%;
-      padding: 20px;
-  }
-  
-  .animated-box button {
-      padding: 10px 20px;
-      font-size: 1rem;
-  }
+.animated-box {
+    width: 90%;
+    padding: 20px;
+    gap: 10px;
 }
+
+.animated-box button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    min-width: 160px;
+}
+}
+
 @media (max-width: 480px) {
-  .header-section {
-      padding: 20px 10px;
-      min-height: 30vh;
-  }
-  
-  .h2 {
-      font-size: 2.2em;
-      margin-bottom: 25px;
-  }
-  
-  .animated-box {
-      width: 95%;
-      padding: 15px;
-  }
-  
-  .animated-box button {
-      padding: 8px 16px;
-      font-size: 0.9rem;
-  }
+.animated-box {
+    width: 95%;
+    padding: 15px;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.animated-box button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    width: 100%;
+    min-width: unset;
+}
+.header-section {
+  padding: 20px 10px;
+  min-height: 30vh;
+}
+
+.h2 {
+  font-size: 2.2em;
+  margin-bottom: 25px;
+}
 }
 
 /* card */
 h1{
-    color: aqua;
-  }
-  
-  /* Container for the cards */
-  .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    font-family: Poppins;
-  
-  }
-  
-  .card{
-    padding: 2em;
-    width: 100%;
-    background: #1c1f2b;
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
-  }
-  
-  .card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1em;
-  }
-  
-  @property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-  }
-  
-  .card::after, .card::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 3px;
-    border-radius: 10px;
-    animation: 3s spin linear infinite;
-  }
-  .card::before{
-    filter: blur(1.5rem);
-    opacity: 0.5;
-  }
-  @keyframes spin{
-    from{
-      --angle: 0deg;
-    }
-    to{
-      --angle: 360deg;
-    }
-  }
-  p{
-     color: white;
-  }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .container {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    body {
-      padding: 1rem;
-    }
-    
-    .container {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-  }
-/* footer */
-.body {
+  color: aqua;
+}
+
+/* Container for the cards */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: Poppins;
+
+}
+
+.card{
+  padding: 2em;
   width: 100%;
-  /* overflow: hidden; */
-  position: relative;
-  margin-top: 50px;
-}
-
-footer {
-  position: relative;
-  width: 100%;
-  background: #3586ff;
-  min-height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-footer .social_icon, 
-footer .menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
-  z-index: 2;
-}
-
-footer .social_icon li, 
-footer .menu li {
-  list-style: none;
-}
-
-footer .social_icon li a {
-  font-size: 2em;
-  color: white;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-}
-
-footer .social_icon li a:hover {
-  transform: translateY(-10px);
-}
-
-footer .menu li a {
-  font-size: 1.2em;
-  color: white;
-  margin: 0 10px;
-  display: inline-block;
-  text-decoration: none;
-  opacity: 0.75;
-  transition: 0.5s;
-}
-
-footer .menu li a:hover {
-  opacity: 1;
-  transform: translateY(-5px);
-}
-
-footer p {
-  color: white;
+  background: #1c1f2b;
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  font-size: 1.1em;
-  z-index: 2;
+  border-radius: 10px;
+  position: relative;
 }
 
-footer .waves {
-  position: absolute;
-  top: -100px;
-  left: 0;
+.card img {
   width: 100%;
-  height: 100px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1em;
 }
 
-footer .wave {
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after, .card::before{
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  height: 100%;
   width: 100%;
-  height: 100px;
-  background: url(../Images/wave.png);
-  background-size: 1000px 100px;
+  background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
 }
-
-footer .wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWave 4s linear infinite;
-}
-
-footer .wave#wave2 {
-  z-index: 999;
+.card::before{
+  filter: blur(1.5rem);
   opacity: 0.5;
-  bottom: 10px;
-  animation: animateWave_02 4s linear infinite;
 }
-
-footer .wave#wave3 {
-  z-index: 1000;
-  opacity: 0.2;
-  bottom: 15px;
-  animation: animateWave 3s linear infinite;
-}
-
-footer .wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animateWave_02 3s linear infinite;
-}
-
-@keyframes animateWave {
-  0% {
-    background-position-x: 1000px;
+@keyframes spin{
+  from{
+    --angle: 0deg;
   }
-  100% {
-    background-position-x: 0px;
+  to{
+    --angle: 360deg;
   }
 }
-
-@keyframes animateWave_02 {
-  0% {
-    background-position-x: 0px;
-  }
-  100% {
-    background-position-x: 1000px;
-  }
+p{
+   color: white;
 }
 
-/* Existing footer styles should be preserved */
-footer .social_icon,
-footer .menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
-}
-
-footer .social_icon li,
-footer .menu li {
-  list-style: none;
-}
-
-footer .social_icon li a {
-  font-size: 2em;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-}
-
-footer .social_icon li a:hover {
-  transform: translateY(-10px);
-}
-
-footer .menu li a {
-  font-size: 1.2em;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  text-decoration: none;
-  opacity: 0.75;
-}
-
-footer .menu li a:hover {
-  opacity: 1;
-}
-
-footer p {
-  color: #fff;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  font-size: 1.1em;
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
-  footer {
-    padding: 20px 30px;
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
