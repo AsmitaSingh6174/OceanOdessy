@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>3D Earth on Scroll</title>
- 
+ <link rel="stylesheet" href="styles.css">
  <style>
   * {
  margin: 0;
@@ -63,7 +62,9 @@ body {
     }
 }
 
-.animated-box {
+/* Update these styles in the existing <style> section */
+
+    .animated-box {
     width: 80%;
     max-width: 800px;
     margin: 0 auto;
@@ -76,6 +77,10 @@ body {
     opacity: 0;
     transition: transform 0.8s ease, opacity 0.8s ease;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .animated-box.show {
@@ -94,6 +99,16 @@ body {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    flex: 0 1 auto;
+}
+
+.animated-box button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .animated-box button:hover {
@@ -105,6 +120,50 @@ body {
     transform: translateY(1px);
 }
 
+/* Update the responsive media queries */
+@media (max-width: 992px) {
+    .animated-box {
+        width: 85%;
+        padding: 25px;
+        gap: 12px;
+    }
+    
+    .animated-box button {
+        padding: 11px 22px;
+        font-size: 1.1rem;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .animated-box {
+        width: 90%;
+        padding: 20px;
+        gap: 10px;
+    }
+    
+    .animated-box button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-box {
+        width: 95%;
+        padding: 15px;
+        gap: 8px;
+        flex-direction: column;
+    }
+    
+    .animated-box button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        width: 100%;
+        min-width: unset;
+    }
+}
 /* Responsive design */
 @media (max-width: 768px) {
     .h2 {
@@ -279,35 +338,14 @@ p {
 {
     color: lightgreen
 }
-.btn-explore {
-    background-color: white;
-    color: var(--white);
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    border: 2px solid #fff;
-  }
-  a{
-    text-decoration: none;
-  }
-  .btn-explore:hover {
-    background-color: transparent;
-    color: var(--white);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(159, 156, 156, 0.598);
-  }
-  
  </style>
 </head>
 <body>
     <div class="header-section">
-        <h2 class="h2" data-text="OceanFacts">OceanFacts</h2>
+        <h2 class="h2" data-text="Facts&Trivia">Facts&Trivia</h2>
         <div class="animated-box">
-            &nbsp;&nbsp;<button><a href="factsmain.html">More Ocean Facts</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;<button><a href="Home.html">Ocean Odessy</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button><a href="factsmain.html">More Ocean Facts</a></button>
+            <button><a href="index.html">Ocean Odessy</a></button>
             <button><a href="conservation.html">Conservation Corner</a></button>
             
 
@@ -359,11 +397,11 @@ p {
             </section>
             <section class="scroll-section">
                 <h2>Keep Exploring</h2>
-                <button class="btn-explore"><a href="factsmain.html" class="btn">Know More</a></button>
+                <p><a href="factsmain.html">Learn More</a></p>
             </section>
         </div>
     </div>
-
+    <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const earth = document.querySelector('.earth');
