@@ -8,7 +8,6 @@
     <link href="css/factsmain.css" rel="stylesheet" type="text/css">
     <title>Ocean Facts</title>
     <style>
-        /* Fix for horizontal overflow */
         body {
             overflow-x: hidden;
             width: 100%;
@@ -17,7 +16,6 @@
             background: linear-gradient(30deg,#070024,#188fff);
         }
         
-        /* Ensure all containers respect boundaries */
         .container, .container-fluid {
             padding-right: 15px;
             padding-left: 15px;
@@ -25,14 +23,12 @@
             max-width: 100%;
         }
         
-        /* Responsive images */
         img {
             max-width: 100%;
             height: auto;
             object-fit: cover;
         }
         
-        /* Responsive text */
         @media (max-width: 576px) {
             h1 {
                 font-size: 1.5rem;
@@ -54,27 +50,23 @@
             }
         }
         
-        /* Ensure rows don't cause overflow */
         .row {
             margin-right: 0;
             margin-left: 0;
             width: 100%;
         }
         
-        /* Fix for any potential column overflow */
         [class*="col-"] {
             padding-right: 10px;
             padding-left: 10px;
         }
         
-        /* Responsive height for fact images */
         @media (max-width: 768px) {
             .row img[style*="height: 500px"] {
                 height: 300px !important;
             }
         }
         
-        /* Lost Cities section responsive styles */
         .img img, .col-lg-4 img {
             width: 100%;
             height: auto;
@@ -90,24 +82,20 @@
             text-align: justify;
         }
         
-        /* Footer responsive adjustments */
         @media (max-width: 768px) {
             footer .d-flex {
                 margin-top: 10px;
             }
         }
         
-        /* Improved card responsiveness */
         .card {
             height: auto !important;
         }
         
-        /* Text color for better readability */
         h1, h2, h4, h5, .p {
             color: white;
         }
         
-        /* Improved spacing for mobile */
         @media (max-width: 576px) {
             .container {
                 padding: 0 10px;
@@ -121,7 +109,7 @@
 </head>
 <body>
   <hr>
-  <!-- Logo & Heading -->
+  <!-- Heading -->
   <div class="container-fluid p-0 mt-4">
   
         <h1 class="text-center mt-4">Ocean Facts: Exploring The Deep Blue</h1>

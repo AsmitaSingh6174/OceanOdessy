@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling for all links
+    // smooth scrolling 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add parallax effect to hero sections
+    // hero sections
     window.addEventListener('scroll', function() {
         const hero = document.querySelector('.hero');
         if (hero) {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Add animation for gallery items
+    // gallery items
     const galleryItems = document.querySelectorAll('.gallery-item');
     if (galleryItems.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -46,10 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Handle 360° video/image interaction
+    // 360° video
     const aScene = document.querySelector('a-scene');
     if (aScene) {
-        // Add loading indicator
         const loadingText = document.createElement('div');
         loadingText.textContent = 'Loading 360° Experience...';
         loadingText.style.position = 'absolute';
@@ -66,14 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
             videoContainer.appendChild(loadingText);
         }
         
-        // Remove loading text when scene is loaded
         aScene.addEventListener('loaded', function() {
             if (loadingText.parentNode) {
                 loadingText.parentNode.removeChild(loadingText);
             }
         });
         
-        // Add instructions for mobile users
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             const mobileInstructions = document.createElement('div');
             mobileInstructions.textContent = 'Move your device to look around';

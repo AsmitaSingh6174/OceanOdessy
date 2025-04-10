@@ -57,7 +57,7 @@ p {
     margin-bottom: 1rem;
 }
 
-/* Header Styles */
+/* Header */
 .site-header {
     background-color: rgba(0, 0, 0, 0.8);
     color: var(--light-text);
@@ -112,7 +112,6 @@ p {
     width: 100%;
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     background-size: cover;
@@ -493,7 +492,6 @@ footer .wave#wave4{
     }
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     .site-header .container {
         flex-direction: column;
@@ -556,7 +554,6 @@ footer .wave#wave4{
     }
 }
 
-/* A-Frame Overrides */
 .a-enter-vr {
     display: none;
 }

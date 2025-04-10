@@ -1,4 +1,4 @@
-/* Base styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -275,7 +275,7 @@ header.parallax-section {
     text-align: left;
     margin-bottom: 0;
 }
-/* Footer styles */
+/* Footer */
 footer {
     position: relative;
     width: 100%;
@@ -446,7 +446,7 @@ footer .wave#wave4 {
     transform: translateY(0);
 }
 
-/* Water ripple effect */
+/* Water ripple */
 .ripple {
     position: absolute;
     border-radius: 50%;
@@ -471,7 +471,7 @@ footer .wave#wave4 {
     }
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
     .content h1 {
         font-size: 2.5rem;

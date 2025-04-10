@@ -4,7 +4,6 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>3D Earth on Scroll</title>
- <link rel="stylesheet" href="styles.css">
  <style>
   * {
  margin: 0;
@@ -62,9 +61,7 @@ body {
     }
 }
 
-/* Update these styles in the existing <style> section */
-
-    .animated-box {
+.animated-box {
     width: 80%;
     max-width: 800px;
     margin: 0 auto;
@@ -409,7 +406,6 @@ p {
             const scrollSections = document.querySelectorAll('.scroll-section');
             const animatedBox = document.querySelector('.animated-box');
             
-            // Show the animated box with a slight delay
             setTimeout(() => {
                 animatedBox.classList.add('show');
             }, 500);
@@ -419,28 +415,21 @@ p {
                 totalScrollHeight += section.offsetHeight;
             });
             
-            // Adjust content position to account for all scroll sections
             content.style.height = totalScrollHeight + 'px';
             
-            // Scroll event listener
             window.addEventListener('scroll', function() {
                 const scrollPosition = window.scrollY;
-                const rotation = scrollPosition / 10; // Adjust rotation speed
-                
-                // Apply rotation based on scroll position
+                const rotation = scrollPosition / 10; 
                 earth.style.animation = 'none';
                 earth.style.transform = `rotateY(${rotation}deg)`;
-                // Restart animation after a small delay to prevent jitter
                 setTimeout(() => {
                     earth.style.animation = 'rotate 60s linear infinite';
                 }, 10);
                 
-                // Update cloud layer rotation (slightly faster for parallax effect)
                 const cloudsRotation = scrollPosition / 8;
                 earth.querySelector('::before').style.transform = `rotateY(${cloudsRotation}deg)`;
             });
             
-            // Reset animation on scroll end for smoother experience
             let isScrolling;
             window.addEventListener('scroll', function() {
                 window.clearTimeout(isScrolling);

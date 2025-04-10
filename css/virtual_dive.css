@@ -161,7 +161,7 @@ nav li:first-child{
     }
 }
  
-  /* Hero Section */
+  /* Hero */
   .hero-section {
     height: 100vh;
     display: flex;
@@ -207,7 +207,7 @@ nav li:first-child{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
-  /* Bubbles Animation */
+  /* Bubbles */
   .bubbles-container {
     position: absolute;
     width: 100%;
@@ -742,7 +742,6 @@ footer .wave#wave4{
   }
 }
 
-  /* Responsive Styles */
   @media (max-width: 991px) {
     .hero-section h1 {
       font-size: 3.5rem;

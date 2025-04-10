@@ -32,35 +32,24 @@ h2{
 
 :root {
     --header-height: 3.5rem;
-  
-    /* /========== Colors ==========/ */
     --black-color: hsl(237, 28%, 15%);
     --black-color-light: hsl(43, 24%, 15%);
     --black-color-lighten: hsl(40, 20%, 18%);
     --white-color: #fff;
     --body-color: hsl(220, 100%, 97%);
   
-    /* /========== Font and typography ==========/ */
     --body-font: "Montserrat", sans-serif;
     --normal-font-size: .938rem;
-  
-    /* /========== Font weight ==========/ */
     --font-regular: 400;
     --font-semi-bold: 600;
-  
-    /* /========== z index ==========/ */
     --z-tooltip: 10;
     --z-fixed: 100;
   }
-  
-  /* /========== Responsive typography ==========/ */
   @media screen and (min-width: 1024px) {
     :root {
       --normal-font-size: 1rem;
     }
   }
-  
-  /* /=============== BASE ===============/ */
   * {
     box-sizing: border-box;
     padding: 0;
@@ -81,15 +70,11 @@ h2{
     text-decoration: none;
   }
   
-  /* /=============== REUSABLE CSS CLASSES ===============/ */
   .container {
     max-width: 1120px;
     margin-inline: 1.5rem;
   }
-  
-  /* /=============== HEADER ===============/ */
   .header {
-    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100%;

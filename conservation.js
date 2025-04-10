@@ -9,7 +9,7 @@ function hideSidebar(){
     sidebar.style.display='none'
 }
 
-// Parallax effect for sections
+// Parallax effect 
 const parallaxSections = document.querySelectorAll('.parallax-section');
 
 window.addEventListener('scroll', () => {
@@ -20,7 +20,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Animated boxes appear on scroll
 const animatedBoxes = document.querySelectorAll('.animated-box');
 
 const observer = new IntersectionObserver((entries) => {
@@ -35,7 +34,7 @@ animatedBoxes.forEach(box => {
     observer.observe(box);
 });
 
-// 3D card effect for stat boxes
+// 3D card effect 
 const statBoxes = document.querySelectorAll('.stat-box');
 
 statBoxes.forEach(card => {
@@ -60,7 +59,7 @@ statBoxes.forEach(card => {
     });
 });
 
-// Water ripple effect for headers
+// Water ripple effect 
 document.addEventListener('DOMContentLoaded', function() {
     const headers = document.querySelectorAll('header, .parallax-section');
     
@@ -80,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Animated counter for stats
 const statNumbers = document.querySelectorAll('.stat-box h3');
 
 function animateCounter(el) {

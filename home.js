@@ -1,8 +1,7 @@
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if AOS is loaded
+
+ document.addEventListener('DOMContentLoaded', function() {
+    
     if (typeof AOS !== 'undefined') {
-        // Initialize AOS with custom settings
         AOS.init({
             duration: 1000,
             once: false,
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('AOS library not loaded. Skipping initialization.');
     }
 
-    // Initialize vanilla-tilt if loaded
     if (typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
             max: 10,
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Show page content, hide loader
     setTimeout(() => {
         const loader = document.querySelector('.loader-container');
         if (loader) {
@@ -32,13 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 loader.style.display = 'none';
                 
-                // Start title animation
                 animateTextReveal();
             }, 500);
         }
     }, 2000);
 
-    // Add smooth scrolling for all links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -53,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     block: 'start'
                 });
                 
-                // Close sidebar if open
                 if (document.querySelector('.sidebar') && 
                     document.querySelector('.sidebar').style.display === 'flex') {
                     hideSidebar();
@@ -62,8 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add parallax effect to ocean description and other elements
-    if (window.innerWidth > 768) { // Only on desktop
+    if (window.innerWidth > 768) { 
         const oceanDescription = document.querySelector('.ocean-description');
         const heroImage = document.querySelector('.hero-image');
         const oceanLayers = document.querySelectorAll('.layer');
@@ -71,17 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', function() {
             const scrollPosition = window.scrollY;
             
-            // Parallax for ocean description
+            // description
             if (oceanDescription) {
                 oceanDescription.style.transform = `translateY(${scrollPosition * 0.05}px)`;
             }
             
-            // Parallax for hero image
+            //image
             if (heroImage) {
                 heroImage.style.transform = `translateY(${scrollPosition * -0.08}px)`;
             }
-            
-            // Parallax for ocean layers
+        //layers
             oceanLayers.forEach((layer, index) => {
                 const depth = layer.getAttribute('data-depth') || (index + 1) * 0.2;
                 layer.style.transform = `translateX(${scrollPosition * depth * 0.1}px)`;
@@ -89,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle header scroll effect
     const header = document.querySelector('header');
     let lastScrollPosition = 0;
     const scrollThreshold = 100;
@@ -106,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollPosition = currentScrollPosition;
     });
 
-    // Add hover effects to marine cards
+    // hover effects for cards
     const marineCards = document.querySelectorAll('.marine-card');
     marineCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -115,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 factBox.style.backgroundColor = '#b3e5fc';
             }
             
-            // Add subtle rotation
+            // card_rotation
             const cardInner = this.querySelector('.card-inner');
             if (cardInner) {
                 cardInner.style.transform = 'rotateY(180deg) scale(1.05)';
@@ -128,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 factBox.style.backgroundColor = '#e0f7fa';
             }
             
-            // Reset rotation
             const cardInner = this.querySelector('.card-inner');
             if (cardInner) {
                 cardInner.style.transform = 'rotateY(180deg)';
@@ -155,70 +145,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Show cookie consent after delay
-    setTimeout(() => {
-        const cookieConsent = document.getElementById('cookieConsent');
-        if (cookieConsent && !localStorage.getItem('cookieAccepted')) {
-            cookieConsent.style.display = 'block';
-        }
-    }, 3000);
-
-    // Handle cookie acceptance
-    const acceptCookiesButton = document.getElementById('acceptCookies');
-    if (acceptCookiesButton) {
-        acceptCookiesButton.addEventListener('click', function() {
-            localStorage.setItem('cookieAccepted', 'true');
-            const cookieConsent = document.getElementById('cookieConsent');
-            if (cookieConsent) {
-                cookieConsent.style.opacity = '0';
-                setTimeout(() => {
-                    cookieConsent.style.display = 'none';
-                }, 500);
-            }
-        });
-    }
-
-    // Newsletter form handling
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = this.querySelector('input[type="email"]').value;
-            const feedbackElement = this.querySelector('.form-feedback');
-            
-            // Simple validation
-            if (email && email.includes('@')) {
-                // Simulate submission success
-                feedbackElement.textContent = 'Thank you for subscribing!';
-                feedbackElement.style.color = '#4CAF50';
-                this.reset();
-                
-                // Clear success message after delay
-                setTimeout(() => {
-                    feedbackElement.textContent = '';
-                }, 5000);
-            } else {
-                feedbackElement.textContent = 'Please enter a valid email address.';
-                feedbackElement.style.color = '#F44336';
-            }
-        });
-    }
-
-    // Initialize floating animations for bubbles and fish
     initFloatingElements();
-
-    // Make ocean layers interactive
     initOceanLayersInteraction();
-
-    // Add cursor effects
     initCustomCursor();
-
-    // Preload images for better performance
     preloadImages();
 });
 
-// Title text animation
 function animateTextReveal() {
     const titleElement = document.querySelector('.title-animated');
     if (titleElement) {
@@ -226,17 +158,14 @@ function animateTextReveal() {
     }
 }
 
-// Initialize floating animations
+// floating animations
 function initFloatingElements() {
-    // Create random movements for bubbles
+    //cutiee bubbles
     const bubbles = document.querySelectorAll('.bubble');
     bubbles.forEach(bubble => {
-        // Add random horizontal movement
-        const randomX = Math.random() * 10 - 5; // Random value between -5 and 5
+        const randomX = Math.random() * 10 - 5; 
         bubble.style.animation = `bubble-rise ${15 + Math.random() * 10}s infinite ease-in`;
         bubble.style.animationDelay = `${Math.random() * 5}s`;
-        
-        // Add slight horizontal movement with CSS
         bubble.style.transform = 'translateX(0)';
         bubble.animate(
             [
@@ -253,7 +182,6 @@ function initFloatingElements() {
         );
     });
 
-    // Animate fish with random speeds and sizes
     const fishes = document.querySelectorAll('.fish');
     fishes.forEach(fish => {
         const randomSize = 0.5 + Math.random() * 1.5;
@@ -265,7 +193,7 @@ function initFloatingElements() {
         fish.style.animation = `fish-swim ${randomSpeed}s linear infinite`;
         fish.style.animationDelay = `-${randomDelay}s`;
         
-        // Add vertical movement
+        //vertical movement
         fish.animate(
             [
                 { transform: `scale(${randomSize}) translateY(0)` },
@@ -282,7 +210,7 @@ function initFloatingElements() {
     });
 }
 
-// Make ocean layers interactive
+// ocean layers
 function initOceanLayersInteraction() {
     const layers = document.querySelectorAll('.layer');
     
@@ -300,10 +228,9 @@ function initOceanLayersInteraction() {
         });
     });
 }
-
-// Custom cursor effect for interactive elements
+// cursour effect
 function initCustomCursor() {
-    if (window.innerWidth <= 768) return; // Skip on mobile
+    if (window.innerWidth <= 768) return; 
     
     const interactiveElements = document.querySelectorAll('.btn, .marine-card, .layer, .action, a');
     
@@ -317,26 +244,21 @@ function initCustomCursor() {
         });
     });
     
-    // Add ripple effect on hero section
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
         heroSection.addEventListener('click', (e) => {
-            // Create ripple element
+            // ripple element
             const ripple = document.createElement('div');
             ripple.classList.add('ripple');
-            
-            // Position at click coordinates
             ripple.style.left = `${e.clientX}px`;
             ripple.style.top = `${e.clientY}px`;
-            
-            // Add to DOM and remove after animation
             heroSection.appendChild(ripple);
             setTimeout(() => {
                 ripple.remove();
             }, 1000);
         });
         
-        // Add ripple style
+        // ripple style
         const style = document.createElement('style');
         style.textContent = `
             .ripple {
@@ -368,17 +290,15 @@ function initCustomCursor() {
     }
 }
 
-// Navigation sidebar functions
+// nav sidebar
 function showSidebar() {
     const sidebar = document.querySelector('.sidebar');
     if (!sidebar) return;
     
     sidebar.style.display = 'flex';
 
-    // Add animation
+    //animation
     sidebar.style.animation = 'slideIn 0.3s forwards';
-
-    // Prevent body scrolling when sidebar is open
     document.body.style.overflow = 'hidden';
     
     // Add blur effect to main content
@@ -393,15 +313,12 @@ function hideSidebar() {
     const sidebar = document.querySelector('.sidebar');
     if (!sidebar) return;
 
-    // Add animation
+    // animation
     sidebar.style.animation = 'slideOut 0.3s forwards';
 
-    // Wait for animation to complete before hiding
     setTimeout(() => {
         sidebar.style.display = 'none';
-        // Restore body scrolling
         document.body.style.overflow = 'auto';
-        
         // Remove blur effect from main content
         const mainContent = document.querySelector('main');
         if (mainContent) {
@@ -410,7 +327,6 @@ function hideSidebar() {
     }, 300);
 }
 
-// Add keydown event to close sidebar with Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         const sidebar = document.querySelector('.sidebar');
@@ -420,7 +336,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Add animation for sidebar if not already added
 if (!document.querySelector('style[data-id="sidebar-animations"]')) {
     const style = document.createElement('style');
     style.setAttribute('data-id', 'sidebar-animations');
@@ -438,7 +353,6 @@ if (!document.querySelector('style[data-id="sidebar-animations"]')) {
     document.head.appendChild(style);
 }
 
-// Preload images for better performance
 function preloadImages() {
     const images = [
         'Images/whale.jpeg',
@@ -450,11 +364,10 @@ function preloadImages() {
     images.forEach(src => {
         const img = new Image();
         img.src = src;
-        img.crossOrigin = "anonymous"; // Prevent CORS issues when using canvas
+        img.crossOrigin = "anonymous"; 
     });
 }
 
-// Add water wave effect to buttons
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.primary-btn');
     
@@ -471,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add dynamic 3D tilt effect to images
+// 3D tilt effect to images
 window.addEventListener('load', function() {
     const images = document.querySelectorAll('.conservation-image, .marine-card');
     
